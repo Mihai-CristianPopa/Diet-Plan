@@ -15,35 +15,39 @@
         </p>
     
         <div class="topnav">
-            <a href="#">Sectiunea1      </a>
-            <a href="#">Sectiunea2      </a>
-            <a href="#">Sectiunea3      </a>
+            <a href="Site.html" class="active">Totul Despre Diete</a>
+            <a href="macros.html">Tabel Produse</a>
+            <a href="#">Generator Dieta</a>
+            <a href="bibliografie.html">Bibliografie</a>
         </div>
         <br>
     </nav>
 
-    <main>
-        <div class="header">
-            <h1>Totul despre Diete</h1>
-          </div>
+    <div class="header">
+        <h1>Totul despre Diete</h1>
+      </div>
+
+    
+
         
             <div class="row">
-                <div class="col-2 col-s-2 menu">
+                <div class="col-2 col-s-2 menu" id="fcsb">
                   <ul>
-                    <li>Dieta Carnivora</li>
+                    <a href="#dieta_carnivora"><li>Dieta Carnivora</li></a>
                     <li>Dieta Ketogenica</li>
                     <li>Dieta Vegetala</li>
-                    <li>Dieta Omnivora</li>
-                    <li>Surse de proteine</li>
+                    <a href="#dieta_omnivora"><li>Dieta Omnivora</li></a>
+                    <!-- <li>Surse de proteine</li>
                     <li>Surse de carbohidrati</li>
-                    <li>Surse de lipide</li>
-                    <li>Generator dieta</li>
-                    <li>Bibliografie</li>
+                    <li>Surse de lipide</li> -->
+                    <!-- <li>Generator dieta</li> -->
+                    <!-- <li>Bibliografie</li> -->
                   </ul>
                 </div>
 
-
-                <div class="col-7 col-s-9">
+                <main>
+                    <section id="content_mijloc">
+                <div class="col-7 col-s-9" id="dieta_carnivora">
                     <h1>Dieta Carnivora</h1>
                     <p>
                         Ce implica dieta carnivora?
@@ -71,12 +75,13 @@
                     lalala
                 </p>
 
-
+                <div id="dieta_omnivora">
                 <h1>Dieta Omnivora</h1>
                     <p>
                         lalala
-                    </p>
+                    </p></div>
                 </div>
+            </section>
                 <div class="col-3 col-s-12">
                     <div class="aside1">
                       <h2>Stiati ca?</h2>
