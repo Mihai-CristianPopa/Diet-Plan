@@ -1,8 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
 #despre_proiect{
     font-size: 30px;
 }
 * {
     box-sizing: border-box;
+    margin:0;
+    padding:0;
   }
   /* .row::after {
     content: "";
@@ -15,17 +18,35 @@
     padding: 15px;
   } */
 
-  html {
-    font-family: "Lucida Sans", sans-serif;
-    font-size: 18px;
+  body {
+    font-family: 'Poppins', sans-serif;
+    /* font-family: 'Lucida Sans', sans-serif; */
+    font-size: 16px;
+    line-height: 1.5;
+    background-color: #a1c3ff;
   }
 
 .header{
-    background-color: #9933cc;
+    /* background-color: #9933cc; */
+    background-color: #254de4;
+    /* background-color: #0151cc; */
     color: #ffffff;
     padding: 15px;
     font-weight: 600;
     font-size: 1.75em;
+    text-indent: 100px;
+}
+
+h1, h2{
+    margin-bottom: 15px;
+}
+
+ul{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
 }
 
 .subtitlu{
@@ -33,18 +54,29 @@
     font-weight:700;
     font-size:1.15em;
     padding-top: 10px;
+    margin-bottom: 15px;
 }
+
+
+
 
 /* Style the top navigation bar */
 .topnav {
     overflow: hidden;
-    background-color: #33b5e5;
+    /* background-color: #33b5e5; */
+    background-color: #3474e6;
   }
 
   /* Navbar links */
+.topnav .container{
+    display:flex;
+    justify-content: space-between;
+    padding: 0 30px;
+    
+}  
   .topnav a {
-    float: left;
-    display: block;
+    /* float: left;
+    display: block; */
     color: white;
     text-align: center;
     padding: 14px 16px;
@@ -53,13 +85,18 @@
   }
 
   .topnav a.active{
-    background-color: #0099cc;
+    /* background-color: #0099cc; */
+    /* background-color: darkblue; */
+    background-color: #0151cc;
     color:white;
 }
 
 .topnav a:hover:not(.active){
-    background-color: #0099cc;
+    /* background-color: #0099cc; */
+    /* background-color: darkblue; */
+    background-color: #0151cc;
     color: white;
+    
 }
 
     /* Change color on hover */
@@ -78,26 +115,30 @@ ol{
 
 .menu ul {
     list-style-type: none;
-    margin: 0;
-    padding: 0;
+    margin-left: 10px;
   }
   
 .menu li {
     padding: 8px;
     margin-bottom: 7px;
-    background-color: #33b5e5;
+    margin-left: 5px;
+    /* background-color: #33b5e5; */
+    background-color: #3474e6;
     color: #ffffff;
     /* box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); */
   }
   
 .menu li:hover {
-    background-color: #0099cc;
+    background-color: #0151cc;
+    /* background-color: darkblue; */
+    /* background-color: #0099cc; */
   }
   
 .menu{
     position: fixed;
     overflow-x: hidden;
     padding: 8px 0;
+    width:auto;
   }
 
 .menu a{
@@ -106,16 +147,69 @@ ol{
 }  
 
 
-#content_mijloc{
+.content_mijloc{
     margin-left:16.66%;
     width: 58.33%;
     float:left;
+    /* background-color: darkblue; */
+    color:black;
+    padding:10px;
+    text-align: justify;
+}
+
+.content_mijloc .subtitlu{
+    text-indent: 150px;
+}
+
+.content_mijloc p {
+    text-indent:10px;
+}
+
+
+#surse_carbohidrati{
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .content_bibliografie{
     margin-left: 22%;
     width:78%;
     
+}
+.content_bbl .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height:80vh;
+    
+}
+.content_bbl .container .item{
+    background-color: #3474e6;
+    color:white;
+    flex:1;
+    font-size: 0.85em;
+    height:40vh;
+    margin:15px;
+    padding:10px 0px;
+    /* background-color: #254de4; */
+}
+
+.content_bbl .container .item h2{
+    text-align: center;
+}
+
+.content_bbl .container .item ul{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.content_bbl .container .item ul li{
+    color:white;
+    text-align: center;
+    margin: 5px;
 }
 
 #ipp a, #ird a, #irp a{
@@ -155,7 +249,8 @@ table{
 
 .aside {
     display: block;
-    background-color: #33b5e5;
+    /* background-color: #33b5e5; */
+    background-color: #3474e6;
     padding: 15px;
     color: #ffffff;
     text-align: center;
@@ -167,9 +262,17 @@ table{
   }
 
 .aside li {
+      padding-left: 5px;
       padding-bottom: 5px;
       text-align: justify;
+      list-style-type: none;
   }
+
+.aside::after{
+    content:"";
+    clear:both;
+    display:block;
+}  
   
  /* For mobile phones: */
 /* @media only screen and (max-width: 600px){
@@ -178,7 +281,12 @@ table{
     }
 } */
 
-@media only screen and (max-width: 600px){
+@media only screen and (max-width: 800px){
+    .topnav .container{
+        flex-direction: column;
+        
+    }
+    
     .menu{
         padding-left:0 ;
         
@@ -190,12 +298,32 @@ table{
     .menu li{
         margin-left: 0;
     }
-    .content_bibliografie{
-        margin-left: 0;
+
+    .menu::after{
+        content:"";
+        clear:both;
+        display:block;
+    }  
+
+    .content_mijloc .subtitlu{
+        text-indent: 0px;
     }
-    #content_mijloc{
+
+    /* .content_bibliografie{
         margin-left: 0;
-        width: 60%;
+    } */
+    .content_bbl .container{
+        flex-direction: column;
+    }
+
+    .content_bbl .container .item{
+        font-size: 0.7em;
+        height: auto;
+    }
+    
+
+    #content_mijloc{
+        width: 100%;
     }
     .aside{
         width:40%;
