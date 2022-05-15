@@ -21,7 +21,7 @@ body{
     grid-template-areas:
     'topnav topnav'
     'header header'
-    'content aside'
+    'content .'
     'footer footer'
     ;
     grid-template-columns: 4fr 1fr;
@@ -43,6 +43,7 @@ nav .topnav .container{
     justify-content: space-between;
     padding:0 30px;
     height:50.8px;
+    /* flex-wrap: wrap; */
     
 }
 
@@ -52,7 +53,7 @@ nav  .topnav .container a {
     align-items: center;
     padding: 14px 16px;
     font-size: 0.95em;
-
+    
   }
 
 
@@ -81,17 +82,17 @@ header{
     
 }
 
- main, aside, footer{
+ main,  footer{
     background-color: rgb(25, 73, 113);
     padding: 20px;
     border:skyblue 1px solid;
 }
 
-aside{
+/* aside{
     background-image:url("piramida.jpg") ;
     background-size: 100% 100%;
     background-repeat: no-repeat;
-}
+} */
 
 .footer{
     font-size: 0.7em;
@@ -100,6 +101,7 @@ aside{
 footer .container{
     display:flex;
     justify-content: center;
+    
 }
 
 
@@ -112,9 +114,9 @@ footer .container{
     grid-area: header;
 }
 
-.grid_container2 aside{
+/* .grid_container2 aside{
     grid-area: aside;
-}
+} */
 
 .grid_container2 .content_generator{
     grid-area: content;
@@ -125,18 +127,48 @@ footer .container{
     grid-area:footer;
 } 
 
-@media screen and(max-width:800px) {
+/* @media screen and(max-width:800px) {
+
+    nav  .topnav .container a{
+        font-size: 0.8em;
+    }
+
+    .topnav .container{
+        flex-wrap:wrap;
+    }
+    
     .grid_container2{
+        grid-template-columns: 1fr;
+        grid-auto-rows: minmax(100px, auto);
         grid-template-areas:
-        'topnav'
+        'topnav1'
+        'topnav2'
+        'topnav3'
+        'topnav4'
+        'topnav5'
         'header'
         'content' 
         'aside'
-        'footer '
-        ;
-        grid-template-columns: 1fr;
-        grid-auto-rows: minmax(100px, auto);
+        'footer ';    
+
+
+    }
+
+    .grid_container2 nav .topnav .container a:nth-of-type(1){
+        grid-area: topnav1;
+    }
+    .grid_container2 nav .topnav .container a:nth-of-type(2){
+        grid-area: topnav2;
+    }
+    .grid_container2 nav .topnav .container a:nth-of-type(3){
+        grid-area: topnav3;
+    }
+    .grid_container2 nav .topnav .container a:nth-of-type(4){
+        grid-area: topnav4;
+    }
+    .grid_container2 nav .topnav .container a:nth-of-type(5){
+        grid-area: topnav5;
     }
 
     
-}
+} */
