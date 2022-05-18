@@ -11,22 +11,31 @@
     crossorigin="anonymous"
   />
     <link rel="stylesheet" type="text/css" href="Site.css" />
-    <script src="Form.js"></script>
+    <!-- <script src="Form.js"></script> -->
+    <!-- <script src="topnav_active_page.js"></script> -->
+    <script src="macros.js"></script>
     <title>Sursele de macronutrienti</title>
 </head>
 <body>
     <div class="grid-container">
     <nav>
     
-            <div class="topnav">
-                <div class="container">
-                    <a href="Site.html" >Totul Despre Diete</a>
-                    <a href="macros.html" class="active">Tabel Produse</a>
-                    <a href="generator_diete.html" >Generator Dieta</a>
-                    <a href="bibliografie.html" >Bibliografie</a>
-                    <a href="despre_proiect.html">Despre Proiect</a>
-                </div>    
+        <div class="topnav">
+            <div class="container">
+                <a href="Site.html" >Totul Despre Diete</a>
+                <span class="dropdown">
+                <a href="macros.html" class='dropbtn'>Tabel Produse</a>
+                        <div class="dropdown-content">
+                            <a href="#surse_proteine">Surse de proteine</a>
+                            <a href="#surse_carbohidrati">Surse de carbohidrati</a>
+                            <a href="#surse_lipide">Surse de lipide</a>
+                        </div>    
+                </span>
+                <a href="generator_diete.html">Generator Dieta</a>
+                <a href="bibliografie.html">Cheatsheet</a>
+                <a href="despre_proiect.html">Despre Proiect</a>
             </div>
+        </div>
     </nav>
 
     
@@ -39,15 +48,15 @@
 
 
                 
-            <div class="menu">
+            <!-- <div class="menu">
                     <ul>
                         <a href="#surse_proteine"><li>Surse de proteine</li></a>
                         <a href="#surse_carbohidrati"><li>Surse de carbohidrati</li></a>
                         <a href="#surse_lipide"><li>Surse de lipide</li></a>
                     </ul>
-            </div>
+            </div> -->
         <section class="content_macros">    
-            <div id="surse_proteine">
+            <div id="surse_proteine" class="cbc">
                 <table>
                     <tr>
                         <th>
@@ -511,7 +520,7 @@
 
             </div>
 
-            <div id="surse_carbohidrati">
+            <div id="surse_carbohidrati" class="cbc">
                 <table>
                     <tr>
                         <th> Surse de Carbohidrati</th>
@@ -676,11 +685,11 @@
 
             </div>
 
-            <div id="surse_lipide">
+            <div id="surse_lipide" class="cbc">
                 <table>
 
                     <tr>
-                        <th> Surse de ipide</th>
+                        <th> Surse de Lipide</th>
                         <th> Continut Lipide per 100g</th>
                         <th> Kcal</th>
                     </tr>

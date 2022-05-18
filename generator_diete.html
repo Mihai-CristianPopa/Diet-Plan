@@ -13,6 +13,9 @@
     <!-- <link rel="stylesheet" type="text/css" href="Site.css" /> -->
     <link rel="stylesheet" type="text/css" href="generator.css" />
     <script src="Form.js"></script>
+    <!-- <script type="module" src="topnav_active_page.js"></script> -->
+    <!-- <script src="topnav_active_page.js"></script> -->
+    <!-- <script src="aparitie_treptata_titlu.js"></script> -->
     <title>Generator Diete</title>
 </head>
 <body>
@@ -22,10 +25,17 @@
     <nav>
         <div class="topnav">
             <div class="container">
-                <a href="Site.html">Totul Despre Diete</a>
-                <a href="macros.html">Tabel Produse</a>
-                <a href="generator_diete.html" class="active">Generator Dieta</a>
-                <a href="bibliografie.html">Bibliografie</a>
+                <a href="Site.html" >Totul Despre Diete</a>
+                <span class="dropdown">
+                <a href="macros.html" class='dropbtn'>Tabel Produse</a>
+                        <div class="dropdown-content">
+                            <a href="#surse_proteine">Surse de proteine</a>
+                            <a href="#surse_carbohidrati">Surse de carbohidrati</a>
+                            <a href="#surse_lipide">Surse de lipide</a>
+                        </div>    
+                </span>
+                <a href="generator_diete.html">Generator Dieta</a>
+                <a href="bibliografie.html">Cheatsheet</a>
                 <a href="despre_proiect.html">Despre Proiect</a>
             </div>
         </div>
@@ -39,24 +49,28 @@
 
     <main>
         <div class="content_generator">
+            <div class="container">
             <form>
                 <input type="text" placeholder="Preferinta de mancare" name="preferinta" id="input1"/>
                 <input type="number" placeholder="Kcal_total" min=1600 max=3000 name="Kcal_total" id = "input2" />
                 <input type="submit"/>
-            </form> 
+            </form>
+            <!-- <button id="sterge">Sterge rezultatele anterioare</button>  -->
+            </div>
             <div id="result">
 
-            </div>
-<!--             
-            <h1>
-                <span id="touchCount">0</span>
-                apăsări
-              </h1>
-              
-              <button id="touchButton">Apasă</button>
-
-              <p id="obo">MUie</p> -->
         </div>
+
+            <!-- <div class="dieta">
+                <div class="nrKcal"></div>
+                <div class="masa1"></div>
+                <div class="masa2"></div>
+                <div class="masa3"></div>
+            </div> -->
+
+        </div>
+
+
                 
     </main>
     <aside>
@@ -65,13 +79,9 @@
         </div>
     </aside>
     <footer>
-        <div class="container">
-
-
             <div class="footer">
                 Acest script, genereaza o dieta pe o zi, cu input de o preferinta. Atat s-a putut...
             </div>
-        </div>
     </footer>
 
     </div>
