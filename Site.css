@@ -57,7 +57,15 @@ a{
     margin-bottom: 15px;
 }
 
-
+#subTabele{
+    /* margin-left:16.66%;
+    margin-bottom: 10px; */
+    padding: 15px 0;
+    color:#ffffff;
+    text-align: center;
+    font-size: 00.7em;
+    background-color: rgb(30, 30, 125);
+}
 
 
 .topnav {
@@ -65,22 +73,31 @@ a{
     overflow: hidden;
     background-color: #3474e6;
   }
+/* 
+inainte de a implementa meniul dropdown era .topnav .container
+acum nu mai functioneaza media query-urile
+dar cred ca stiu de ce also paddingul era 0 30px
+*/
+
+
+
+
 
 .topnav .container{
     display:flex;
     justify-content: space-between;
-    padding: 0 30px;
-    
-}  
-  .topnav a {
+    padding:0 30px;
+}
+
+.topnav a {
     color: white;
     text-align: center;
-    padding: 14px 16px;
+    padding: 16px 16px;
     text-decoration: none;
     font-size: 00.95em;
   }
 
-  .topnav a.active{
+.topnav a.active{
     /* background-color: #0099cc; */
     /* background-color: darkblue; */
     background-color: #0151cc;
@@ -91,6 +108,9 @@ a{
     /* background-color: #0099cc; */
     /* background-color: darkblue; */
     background-color: #0151cc;
+    opacity: 0.8;
+    transition-property: background-color, opacity;
+    transition-duration: 300ms;
     color: white;
     
 }
@@ -113,6 +133,9 @@ a{
     /* background-color: darkblue; */
     /* background-color: #0099cc; */
     background-color: #0151cc;
+    opacity: 0.8;
+    transition-property: background-color, opacity;
+    transition-duration: 300ms;
   }
   
 .menu{
@@ -124,8 +147,43 @@ a{
 
 .menu a{
     font-size: 0.95 rem;
-}  
+} 
 
+
+.dropdown{
+    justify-self: center;
+    align-self: center;
+}
+
+.dropdown:hover .dropbtn{
+    background-color: #0151cc;
+    opacity: 0.8;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #a1c3ff;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+  
+.dropdown:hover .dropdown-content {
+    display: block;
+  }
+.dropdown-content:hover .dropbtn{
+    background-color: #0151cc;
+    opacity: 0.8;
+}   
 
 .content_mijloc{
     /* background-color: darkblue; */
@@ -146,16 +204,46 @@ a{
 }
 
 
-#surse_carbohidrati{
-    padding-top: 10px;
-    padding-bottom: 10px;
+/* #surse_carbohidrati{
+    margin-top:10px;
+    margin-bottom:10px;
+}
+#surse_lipide{
+    margin-bottom: 20px;
+} */
+.cbc{
+    margin:20px 10px;
+}
+
+/* header{
+    height: 20vh;
+} */
+
+/* .bbl .container{
+    display: flex;
+    flex-direction: column;
+    height:80vh;
+    flex-wrap: wrap;
+}
+.bbl .container .content_bbl{
+    background-color: aquamarine;
+    flex:1;
+} */
+
+.footer_bbl{
+    padding: 15px 0;
+    color: #ffffff;
+    font-size: 00.7em;
+    text-align: center;
+    background-color: rgb(30, 30, 125);
 }
 
 .content_bbl .container{
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    height:80vh;
+    min-height:75vh;
     flex-wrap: wrap;
     
 }
@@ -167,7 +255,6 @@ a{
     height:minmax(40vh, auto);
     margin:15px;
     padding:10px 0px;
-    /* background-color: #254de4; */
     border-radius: 10px;
 }
 
@@ -189,10 +276,6 @@ a{
     margin: 5px;
 }
 
-#ipp a, #ird a, #irp a{
-    text-decoration: none;
-    color: black;
-}
 
 div p {
     font-size: 0.95em;
@@ -214,9 +297,9 @@ td{
 }
 
 table{
-    margin-top:8px ;
-    margin-left:16.66%;
-    width: 83.33%;
+    margin-left:10%;
+    margin-right:10%;
+    width: 80%;
     border-collapse: collapse;
     
 }
@@ -250,11 +333,16 @@ table{
     display:block;
 }   */
 
+.content_mijloc p::first-letter{
+    font-size: large;
+    font-weight: bold;
+}
 
 .bucata1 .container{
     display: flex;
-    background-color: aqua;
+    /* background-color: aqua; */
     flex-shrink: 1;
+    margin: 10px 0;
 }
 .bucata1 .container .aside{
     justify-self: center;
@@ -263,7 +351,8 @@ table{
 
 .bucata2 .container{
     display: flex;
-    background-color: pink;
+    /* background-color: pink; */
+    margin: 10px 0;
 }
 
 .bucata2 .container .aside{
@@ -273,9 +362,10 @@ table{
 
 .bucata3 .container{
     display: flex;
-    background-color: rgb(92, 145, 145);
+    /* background-color: rgb(92, 145, 145); */
     justify-content: center;
     align-items: center;
+    margin: 10px 0;
 }
 
 .bucata3 .container .aside{
@@ -286,12 +376,40 @@ table{
 
 .bucata4 .container{
     display: flex;
-    background-color: rgb(104, 255, 109);
+    margin: 10px 0;
+    /* background-color: rgb(104, 255, 109); */
 }
 
 .bucata4 .container .aside{
     justify-self: center;
     align-self: center;
+}
+
+.footer_site{
+    padding: 15px 0;
+    color: #ffffff;
+    font-size: 00.7em;
+    text-align: center;
+    background-color: rgb(30, 30, 125);
+}
+#swap img{
+    width: 250px;
+}
+#swap li{
+    text-align: center;
+}
+
+@keyframes rotation{
+    0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+}
+
+.item{
+    animation: rotation 3s ease-in-out;
 }
 
 /* .bucata1 .container aside{
@@ -305,19 +423,18 @@ table{
     }
 } */
 
-.footer_bbl{
-    /* display:flex;
-    position: fixed; */
-    background-color: aqua;
-    /* justify-self: center; */
-    text-align: center;
-}
 
 
 @media only screen and (max-width: 800px){
     .topnav .container{
-        flex-direction: column;
-        
+        flex-direction: column;        
+    }
+
+    .dropdown{
+        padding: 16px 16px;
+        justify-self: unset;
+        align-self: unset;
+        text-align: center;
     }
     
     .menu{
@@ -337,6 +454,12 @@ table{
         clear:both;
         display:block;
     }   */
+
+    /*
+    Trebuie sa aranjez pagina de cheatsheet pentru ecrane mici
+    gata l-am aranjat
+    */
+
 
     .content_mijloc .subtitlu{
         text-indent: 0px;

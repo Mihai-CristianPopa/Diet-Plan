@@ -11,71 +11,93 @@
     crossorigin="anonymous"
   />
     <link rel="stylesheet" type="text/css" href="Site.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="bibliografie.css" /> -->
+    <!-- <script src="topnav_active_page.js"></script> -->
+    <script src="bibliografie.js"></script>
     <title>Bibliografie</title>
 </head>
 <body>
-
-    <nav>
-    
-        <div class="topnav">
-            <div class="container">
-                <a href="Site.html">Totul Despre Diete</a>
-                <a href="macros.html">Tabel Produse</a>
-                <a href="generator_diete.html">Generator Dieta</a>
-                <a href="bibliografie.html" class="active">Bibliografie</a>
-                <a href="despre_proiect.html">Despre Proiect</a>
+    <header>
+        <nav>
+        
+            <div class="topnav">
+                <div class="container">
+                    <a href="Site.html" >Totul Despre Diete</a>
+                    <span class="dropdown">
+                    <a href="macros.html" class='dropbtn'>Tabel Produse</a>
+                            <div class="dropdown-content">
+                                <a href="#surse_proteine">Surse de proteine</a>
+                                <a href="#surse_carbohidrati">Surse de carbohidrati</a>
+                                <a href="#surse_lipide">Surse de lipide</a>
+                            </div>    
+                    </span>
+                    <a href="generator_diete.html">Generator Dieta</a>
+                    <a href="bibliografie.html">Cheatsheet</a>
+                    <a href="despre_proiect.html">Despre Proiect</a>
+                </div>
             </div>
+        </nav>
+
+
+        <div class="header" id="bbl">
+            <section>Cheatsheet</section>
         </div>
-    </nav>
-
-
-    <div class="header" id="bbl">
-        Bibliografie
-    </div>
-
-    <main>
-
-        <div class="content_bbl">
-            <div class="container">
-                <div class="item">
-                    <h2>Idei de implementare</h2>
-                    <ul>
-                        <a href="https://www.w3schools.com/css/css_rwd_grid.asp" target="_blank"><li>https://www.w3schools.com/css/css_rwd_grid.asp</li></a>
-                        <a href="https://blog.hubspot.com/marketing/jump-link-same-page" target="_blank"><li>https://blog.hubspot.com/marketing/jump-link-same-page</li></a>
-                    </ul>
+    </header>
+            <main>
+    <div class="bbl">    
+        <div class="container">
+                <div class="content_bbl">
+                    <div class="container">
+                        <div class="item">
+                            <h2>Totul despre diete</h2>
+                            <ul>
+                                <li>1, 2, 3, 4 => sidebar</li>
+                                <li>click stanga pe header => background, culoare font, tranzitie</li>
+                                <li>click dreapta pe pagina pentru a aduce headerul la normal</li>
+                                <li>+ => creste fontul / - => scade fontul</li>
+                                <li>f u n d a l schimbi background-ul si culoarea fontului pentru partea din mijloc</li>
+                                <li>backspace pentru a da revert la comanda anterioara</li>
+                                <li>swap-ul cu setInterval</li>
+                            </ul>
+                        </div>
+                        <div class="item" >
+                            <h2>Tabel Produse</h2>
+                            <ul>
+                                <li>1, 2, 3 => sidebar</li>
+                                <li>+ => creste fontul / - => scade fontul</li>
+                                <li>f u n d a l schimbi background-ul si culoarea fontului pentru tabele</li>
+                                <li>backspace pentru a da revert la comanda anterioara</li>
+                                <li>in footer apare rezultatul unui calcul care ia in seama ultimul input din localStorage de pe pagina urmatoare</li>
+                                <li>indentare header la mouse pe meniul dropdown</li>
+                            </ul>
+                        </div>
+                        <div class="item">
+                            <h2>Generator Dieta</h2>
+                            <ul id ='lista'>
+                                <li>momentan este doar ce se intampla la submit</li>
+                            </ul>
+                        </div>
+                        <div class="item">
+                            <h2>Cheatsheet</h2>
+                            <ul id ='lista'>
+                                <a href="https://www.nutrition.org.uk/healthy-sustainable-diets/protein/?level=Consumer" target="_blank"><li>https://www.nutrition.org.uk/healthy-sustainable-diets/protein/?level=Consumer</li></a>
+                                <a href="https://healthbeet.org/printable-high-protein-food-list/" target="_blank"><li>https://healthbeet.org/printable-high-protein-food-list/</li></a>
+                                <a href="https://calorii.oneden.com/" target="_blank"><li>https://calorii.oneden.com/</li></a>
+                                <a href="https://www.tuasaude.com/en/high-carb-foods/" target="_blank"><li>https://www.tuasaude.com/en/high-carb-foods/</li></a>
+                                <a href="https://www.helpguide.org/articles/healthy-eating/choosing-healthy-fats.htm" target="_blank"><li>https://www.helpguide.org/articles/healthy-eating/choosing-healthy-fats.htm</li></a>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
-                <div class="item">
-                    <h2>Informatii referitoare la diete</h2>
-                    <ul>
-                        <a href="https://www.w3schools.com/css/css_rwd_grid.asp" target="_blank"><li>https://www.w3schools.com/css/css_rwd_grid.asp</li></a>
-                        <a href="https://blog.hubspot.com/marketing/jump-link-same-page" target="_blank"><li>https://blog.hubspot.com/marketing/jump-link-same-page</li></a>
-                        <a href="https://en.wikipedia.org/wiki/List_of_diets" target="_blank"><li>https://en.wikipedia.org/wiki/List_of_diets</li></a>
-                        <a href="https://www.healthline.com/nutrition/ketogenic-diet-101#what-it-is" target="_blank"><li>https://www.healthline.com/nutrition/ketogenic-diet-101#what-it-is</li></a>
-                    </ul>
-                </div>
-                <div class="item">
-                    <h2>Informatii referitoare la produse</h2>
-                    <ul>
-                        <a href="https://www.nutrition.org.uk/healthy-sustainable-diets/protein/?level=Consumer" target="_blank"><li>https://www.nutrition.org.uk/healthy-sustainable-diets/protein/?level=Consumer</li></a>
-                        <a href="https://healthbeet.org/printable-high-protein-food-list/" target="_blank"><li>https://healthbeet.org/printable-high-protein-food-list/</li></a>
-                        <a href="https://calorii.oneden.com/" target="_blank"><li>https://calorii.oneden.com/</li></a>
-                        <a href="https://www.tuasaude.com/en/high-carb-foods/" target="_blank"><li>https://www.tuasaude.com/en/high-carb-foods/</li></a>
-                        <a href="https://www.helpguide.org/articles/healthy-eating/choosing-healthy-fats.htm" target="_blank"><li>https://www.helpguide.org/articles/healthy-eating/choosing-healthy-fats.htm</li></a>
-                    </ul>
-                </div>
 
-
-            </div>
-        </div>
-    
-
-    </main>
-
-    <footer class="footer_bbl">
-            <div>
+            
+            <div class="footer_bbl">
                 Atat am putut.
             </div>
-    </footer>
+            
+        </div> 
+    </div> 
     
+        </main>        
 </body>
 </html>

@@ -76,6 +76,9 @@ function init(){
     header.addEventListener("click", ()=>{
         header.style.backgroundColor = "red";
         header.style.color = "blue";
+        // header.style.transitionProperty='background-color, color';
+        // header.style.tranisitionDuration='1000ms';
+        header.style.transition='300ms background-color ease-in-out, 300ms color ease-in-out';
     });
     // document.addEventListener("keyup", (e)=>{
         // if (Number(e.key)==NaN) return;
@@ -92,11 +95,12 @@ function init(){
         // document.addEventListener("keyup", handleKeyup);
 
     const unObiect = document.querySelectorAll(".menu ul li");
-    console.log(unObiect);
-    console.log(unObiect[0]);
+    // console.log(unObiect);
+    // console.log(unObiect[0]);
     for (let i = 0; i<unObiect.length; i++)
     {unObiect[i].id=i+1;
-    console.log(unObiect[i].id);}
+    // console.log(unObiect[i].id);
+    }
     document.addEventListener('keydown', handleKeydown);
     // // luam in considerare evenimentul cand tasta este apasata
     document.addEventListener('keyup', handleKeyup);
@@ -107,6 +111,35 @@ function init(){
             header.style.color = "white";
             header.style.backgroundColor = "#254de4";
     });
+
+    // document.addEventListener("keydown", preventDefaultAlt);
+    // document.addEventListener("keydown", e => {
+    //     if (e.key === "Alt") {
+    //       e.preventDefault();
+    //     }
+    // })
+    /// Daca ma joc cu prevent default-ul peste Alt atunci se anuleaza toate controalele
+    /// default precum ctrl+r si nu mi-am dat seama cum sa rezolv asta
+
+
+
+    document.addEventListener('keydown', changeTextBackgroundColor);
+    topnav_active_page();
+    swap();
+
+}
+
+function topnav_active_page(){
+    const link = location.href;
+    console.log(link);
+    const lista = document.querySelectorAll('.topnav a');
+    // console.log(lista[0].href);
+    // console.log(lista[0].innerHTML);
+    for (let i = 0; i<lista.length; i++){
+        if(lista[i].href === link){
+            lista[i].classList.add('active');
+        }
+    }
 }
 
 
@@ -126,7 +159,7 @@ function handleKeydown(event) {
     if(parseInt(event.key)>0 && parseInt(event.key)<=4)
     {
         const schimbamCuloare = document.getElementById(event.key);
-        console.log(schimbamCuloare);
+        // console.log(schimbamCuloare);
         schimbamCuloare.style.backgroundColor = "red";
         // const pressed = document.querySelector('pressed');
         // pressed.style.backgroundColor="red";
@@ -158,7 +191,7 @@ function handleKeydown(event) {
 // o incercare nereusita de a salva font-sizeul header-ului
 // intr-o variabila pentru a il refolosi mai tarziu
   function increaseFontSize(event){
-      console.log(event.keyCode);
+    //   console.log(event.keyCode);
       // keyCode iti da numarul in "pseudoAscii"
       // key <==> code iti da fix ce scrie pe tastatura
     if(event.keyCode===187){
@@ -191,7 +224,85 @@ function handleKeydown(event) {
 // increaseFontSize() si decreaseFontSize() functioneaza atat pentru =-
 // cat si pentru +_
 // interesant deci nu trebuie tinut apasat shiftul ca sa functioneze
+// function preventDefaultAlt(e)
+// {
+//     if (e.key === "Alt") {
+//       e.preventDefault();
+//     }
+// }
 
+function changeTextBackgroundColor(event){
+    // event.preventDefault();
+    const content_mijloc = document.getElementsByClassName('content_mijloc');
+    const body = document.querySelector('body');
+    const style = window.getComputedStyle(body);
+    const initialBgColor= style.getPropertyValue('background-color');
+    const bolder = document.querySelector('#bolder');
+    console.log(initialBgColor);
+    // const initialTextColor = style.getPropertyValue('color');
+    console.log(event.keyCode);
+    if (event.key === 'f'){
+        document.onkeydown= (ee)=>{
+            if(ee.key=== 'u'){
+                document.onkeydown= (ee)=>{
+                    if(ee.key=== 'n'){
+                        document.onkeydown= (ee)=>{
+                            if(ee.key=== 'd'){
+                                document.onkeydown= (ee)=>{
+                                    if(ee.key=== 'a'){
+                                        document.onkeydown= (ee)=>{
+                                            if(ee.key=== 'l'){
+                            for (let i = 0; i < content_mijloc.length; i++){
+                                content_mijloc[i].style.backgroundColor='rgb(30, 30, 125)';
+                                content_mijloc[i].style.color='white';
+                                content_mijloc[i].style.borderRadius='10px';
+                                bolder.style.color='white' 
+                                                        }//de la for
+                        }//if6                                            
+                        }//doc5
+                    }//if5
+                    }//doc4
+                }//if4
+                }//doc3                                
+            }//if3
+            }//doc2
+        }//if2
+        }//doc1
+    }//if1
+    if(event.key === 'Backspace'){
+        for (let i = 0; i < content_mijloc.length; i++){
+            content_mijloc[i].style.backgroundColor=initialBgColor;
+            content_mijloc[i].style.color='black';
+            bolder.style.color='black'
+                                    }//de la for
+    }
+}
+
+
+
+function swap(){
+    let i = 0;
+    const deSchimbat = document.getElementById('swap');
+    deSchimbat.dataset.text = deSchimbat.textContent;
+    
+    let intervalId = setInterval(()=>{
+    // console.log(deSchimbat.innerHTML);
+    const img = document.createElement('img');    
+    const array = ['swap1.jpg', 'swap2.jpg', 'swap3.jpg']
+    // let random = Math.floor(Math.random*2);
+    // console.log(array.random);
+    img.src = array[i];
+    deSchimbat.textContent = "";
+    deSchimbat.appendChild(img);
+    i++;
+    if(i>3){
+        deSchimbat.removeChild(img);
+        deSchimbat.innerHTML = deSchimbat.dataset.text;
+        clearInterval(intervalId);
+    }
+}, 3000)
+
+}
 
 
 window.onload = init;
