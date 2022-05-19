@@ -47,6 +47,9 @@ function init(){
     // pe meniu
 
     cautarePreferinta();
+    const tables = [...document.getElementsByTagName('table')];
+    tables.forEach(el => el.addEventListener('click',alertMancare));
+    modificareIndentareDinamica();
 }
 
 
@@ -294,4 +297,76 @@ function cautarePreferinta(){
             }    
 
 }
+function alertMancare(event){
+    const tabel = event.currentTarget;
+    const patratica = event.target;
+    const patraticaUrmatoare =patratica.nextElementSibbling;
+    // console.log(patratica);
+    // console.log(patraticaUrmatoare)
+    // console.log(tabel);
+    const titlu_tabel = tabel.querySelector('th:nth-of-type(1)');
+    console.log(titlu_tabel.textContent);
+    if(event.target.tagName === 'TH'){
+        alert('Ai apasat pe zona informativa a tabelului');
+        event.stopPropagation();
+        // aici daca nu foloseam stopPropagation s-ar fi pornit si celalalt alert
+    }
+    else{    
+    alert(`Ai apasat pe ${patratica.textContent} din tabelul ${titlu_tabel.textContent}`);
+    }
+
+    /// acum ce vreau sa mai fac e sa afisez toate informatiile de pe un rand, indiferent, pe care dintre
+    /// elemente a apasat
+}
+
+function modificareIndentareDinamica(){
+    const normal = document.querySelector('.topnav a:nth-of-type(1)');
+    const styles = window.getComputedStyle(normal);
+    console.log(styles.getPropertyValue('font-size'));
+    const marimeFont = styles.getPropertyValue('font-size');
+
+    const tp = document.querySelector('.topnav .dropbtn');
+    // const style = window.getComputedStyle(tp);
+    // console.log(style.getPropertyValue('font-size'));
+
+    
+
+    // const header = document.querySelector('.header');
+    // console.log(normal.getBoundingClientRect());
+
+    let rect = normal.getBoundingClientRect();
+    let latime = rect['width'];
+    // console.log(latime);
+    let intervalId = setInterval(()=>{
+    if(parseInt(latime) <= 800){
+    // console.log(normal.textContent);
+    let rect = normal.getBoundingClientRect();
+    let latime = rect['width'];
+    // const normalPeLitere =[...normal.textContent];
+    const tpPeLitere = [...tp.textContent];
+    // console.log(normalPeLitere[0]);
+
+    // const lungimeTextNormal = normalPeLitere.length * Math.floor(Math.sqrt(parseInt(marimeFont)));
+    // const lungimeTextNormal = normalPeLitere.length * parseInt(marimeFont);
+    // console.log(lungimeTextNormal);
+
+    const lungimeTp = tpPeLitere.length*(parseInt(marimeFont));
+    const marimeIndentare = latime - lungimeTp;
+    // asta e distanta care trebuie impartita la doi pentru ca ne trebuie margini in ambele parti
+    console.log(marimeIndentare);
+    tp.style.textIndent=`${marimeIndentare/2 + 20}px`;
+    }
+    else{
+        clearInterval(intervalId);
+    }},250)
+
+
+
+    // console.log(tp.getBoundingClientRect());
+    // console.log(header.getBoundingClientRect());
+    /// vreau sa fac pentru media query o functie care-mi indenteaza
+    /// linkul din meniul dropdown, scazand latimea lui din latimea headerului
+    /// si apoi indentant cu jumatate din valoarea obtinuta
+}
+
 onload = init;

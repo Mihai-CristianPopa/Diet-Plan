@@ -77,17 +77,17 @@
 // }
 
 // onload = init;
-// function init(){
-//     const vector = ["O sa treci toate examenele!", "O sa ai o vara frumoasa!", "O sa te ciupeasca un tantar!", "cevaaa"]
-//     // const div = document.createElement('div');
-//     const result = document.querySelector('.footer_bbl');
-//     console.log(vector[Math.floor(Math.random*3+2)]);
-// }
 
 // onload = init();
 
+
 function init(){
     topnav_active_page();
+    // const footer = document.querySelector('.footer_bbl');
+    // footer.addEventListener('click',()=> {toggle =!toggle});
+    addTimeInFooter();
+    modificareIndentareDinamica();
+    ravaseColorate();
 }
 
 function topnav_active_page(){
@@ -102,5 +102,77 @@ function topnav_active_page(){
         }
     }
 }
+function addTimeInFooter(){
+    const footer = document.querySelector('.footer_bbl');
+    // footer.style.textAlign = 'right';
+    footer.style.paddingRight = '20px';
+    footer.style.fontSize = '0.85em';
+        setTimeout(()=>{setInterval(()=>{
+        const date = new Date();    
+        const [hour, minutes, seconds] = [date.getHours(), date.getMinutes(), date.getSeconds()];   
+        footer.textContent =`${hour} : ${minutes} : ${seconds} `;
+        },1000);
+    },5000);
+}
+
+function modificareIndentareDinamica(){
+    const normal = document.querySelector('.topnav a:nth-of-type(1)');
+    const styles = window.getComputedStyle(normal);
+    console.log(styles.getPropertyValue('font-size'));
+    const marimeFont = styles.getPropertyValue('font-size');
+
+    const tp = document.querySelector('.topnav .dropbtn');
+    // const style = window.getComputedStyle(tp);
+    // console.log(style.getPropertyValue('font-size'));
+
+    
+
+    // const header = document.querySelector('.header');
+    // console.log(normal.getBoundingClientRect());
+
+    let rect = normal.getBoundingClientRect();
+    let latime = rect['width'];
+    // console.log(latime);
+    let intervalId = setInterval(()=>{
+    if(parseInt(latime) <= 800){
+    // console.log(normal.textContent);
+    let rect = normal.getBoundingClientRect();
+    let latime = rect['width'];
+    // const normalPeLitere =[...normal.textContent];
+    const tpPeLitere = [...tp.textContent];
+    // console.log(normalPeLitere[0]);
+
+    // const lungimeTextNormal = normalPeLitere.length * Math.floor(Math.sqrt(parseInt(marimeFont)));
+    // const lungimeTextNormal = normalPeLitere.length * parseInt(marimeFont);
+    // console.log(lungimeTextNormal);
+
+    const lungimeTp = tpPeLitere.length*(parseInt(marimeFont));
+    const marimeIndentare = latime - lungimeTp;
+    // asta e distanta care trebuie impartita la doi pentru ca ne trebuie margini in ambele parti
+    // console.log(marimeIndentare);
+    tp.style.textIndent=`${marimeIndentare/2 + 20}px`;
+    }
+    else{
+        clearInterval(intervalId);
+    }},250)
+
+
+
+    // console.log(tp.getBoundingClientRect());
+    // console.log(header.getBoundingClientRect());
+    /// vreau sa fac pentru media query o functie care-mi indenteaza
+    /// linkul din meniul dropdown, scazand latimea lui din latimea headerului
+    /// si apoi indentant cu jumatate din valoarea obtinuta
+}
+
+
+function ravaseColorate(){
+    const vector = ["O sa treci toate examenele!", "O sa ai o vara frumoasa!", "O sa te ciupeasca un tantar!", "O sa termini proietul"]
+    const culoriText = ['rgb(195, 245, 229)', 'rgb(252, 255, 151) ', 'rgb(245, 193, 246) ', 'rgb(170, 153, 162) ', 'white' ]
+    const result = document.querySelector('.footer_bbl');
+    console.log(vector[Math.floor(Math.random()*3)]);
+    result.textContent=vector[Math.floor(Math.random()*3)];
+    result.style.color=culoriText[Math.floor(Math.random()*4)];
+ }
 
 onload = init;

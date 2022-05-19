@@ -403,8 +403,18 @@ table{
     0% {
         transform: rotate(0deg);
       }
+    40%{
+        transform:rotate(100deg) ;
+        background-color: rgb(49, 242, 181);
+        opacity: 0.5;
+        color:black;
+    }  
+
+
       100% {
         transform: rotate(360deg);
+        background-color: rgb(30, 30, 125);
+        opacity: 0.8;
       }
 }
 
@@ -431,10 +441,13 @@ table{
     }
 
     .dropdown{
-        padding: 16px 16px;
+        padding: 16px 0;
         justify-self: unset;
         align-self: unset;
-        text-align: center;
+    }
+    .dropbtn{
+        display: flex;
+        
     }
     
     .menu{
@@ -459,6 +472,7 @@ table{
     Trebuie sa aranjez pagina de cheatsheet pentru ecrane mici
     gata l-am aranjat
     */
+
 
 
     .content_mijloc .subtitlu{

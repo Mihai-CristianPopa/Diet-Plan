@@ -16,6 +16,12 @@
     <!-- <script type="module" src="topnav_active_page.js"></script> -->
     <!-- <script src="topnav_active_page.js"></script> -->
     <!-- <script src="aparitie_treptata_titlu.js"></script> -->
+    <!-- <script>
+        window.onload = () => {
+            const form = document.querySelector('form');
+            form.setAttribute('method', 'post');
+        };
+      </script> -->
     <title>Generator Diete</title>
 </head>
 <body>
@@ -50,13 +56,18 @@
     <main>
         <div class="content_generator">
             <div class="container">
-            <form>
-                <input type="text" placeholder="Preferinta de mancare" name="preferinta" id="input1"/>
-                <input type="number" placeholder="Kcal_total" min=1600 max=3000 name="Kcal_total" id = "input2" />
+            <form id="aplicatiaInitiala" method="post">            
+                <label>Preferinta: </label>
+                <input type="text" placeholder="Preferinta de mancare" name="preferinta" id="input1" required/>
+                <br>
+                <label>Kcal_totale: </label>
+                <input type="number" placeholder="Kcal_total" min=1600 max=3000 name="kcal_total" id = "input2" required/>
                 <input type="submit"/>
             </form>
-            <!-- <button id="sterge">Sterge rezultatele anterioare</button>  -->
             </div>
+            <!-- <button id="getTxt">Grab text</button>
+            <div id="ajax">
+            </div> -->
             <div id="result">
 
         </div>

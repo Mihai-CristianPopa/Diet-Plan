@@ -1,23 +1,34 @@
 // import topnav_active_page from "./topnav_active_page";
 function init(){
 
-    const form = document.querySelector('form');
+    const form = document.querySelector('#aplicatiaInitiala');
     form.addEventListener('submit', handleSubmit);
 
-    // const lista = document?.getElementsByClassName('deSters');
-    // let indexSters=lista.length-1;
-    // if(indexSters!==-1){
-    // const sterge = document.getElementById('sterge');
-    // sterge.addEventListener('click', ()=>{               
-    //     lista[indexSters].textContent = "";
-    // })
-    // indexSters--;
-    // }
-           
+    // document.addEventListener('keydown', handleKeyDown);
+    // ajax();       
     topnav_active_page();
-    // cautarePreferinta();              
+    // cautarePreferinta();             
 
 }
+
+
+// function ajax(){
+//     const getTxt = document.getElementById('getTxt');
+
+//     const content = document.getElementById('ajax');
+
+//     const xhr = new XMLHttpRequest();
+
+//     getTxt.addEventListener('click', ()=>{
+
+//             xhr.addEventListener('readystatechange', ()=>{
+//                 content.innerHTML = this.responseText;
+//             });
+//             xhr.open('GET', 'despre_proiect.html',true);
+//             xhr.send();
+//     });
+
+// }
 
 function topnav_active_page(){
     const link = location.href;
@@ -34,10 +45,13 @@ function topnav_active_page(){
 
 function handleSubmit(event){
     event.preventDefault();
+    // fara preventDefault() pagina se comporta dubios dupa submit
     
     const input1 = document.querySelector('#input1').value;
     const input2 = document.querySelector('#input2').value;
     const div = document.getElementById('result');
+    const form = document.querySelector('#aplicatiaInitiala');
+    form.style.visibility='hidden';
     
     div.style.color = 'white';
     div.style.fontWeight = '500';
@@ -125,10 +139,12 @@ function handleSubmit(event){
             div.style.fontSize = 30 + 'px';
             div.style.fontWeight= 'bold';
             div.appendChild(button);
+            form.style.visibility = 'visible';
         }
         else{
                         setTimeout(()=>{    
                             div.textContent = " ";
+                            form.style.visibility = 'visible';
                             }, 100);
                                         } // de la else
             },20000); 
