@@ -88,7 +88,21 @@ function init(){
     addTimeInFooter();
     modificareIndentareDinamica();
     ravaseColorate();
+    const lista = document.getElementById('lista');
+
+    console.log(lista);
+    lista.addEventListener('dblclick', ()=>{
+        const styles = getComputedStyle(lista);
+        const directie = styles.getPropertyValue('flex-direction');
+        if(directie === 'column'){
+        lista.style.flexDirection = 'column-reverse';
+        }
+        else if(directie === 'column-reverse'){
+            lista.style.flexDirection = 'column';
+        }
+    });
 }
+
 
 function topnav_active_page(){
     const link = location.href;

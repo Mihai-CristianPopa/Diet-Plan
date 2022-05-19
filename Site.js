@@ -125,6 +125,8 @@ function init(){
 
     document.addEventListener('keydown', changeTextBackgroundColor);
     topnav_active_page();
+    // const zonaSwap = document.getElementById('swap');
+    // zonaSwap.addEventListener('mouseover',swap);
     swap();
     modificareIndentareDinamica();
 

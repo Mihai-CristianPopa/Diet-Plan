@@ -15,13 +15,6 @@
     <script src="Form.js"></script>
     <!-- <script type="module" src="topnav_active_page.js"></script> -->
     <!-- <script src="topnav_active_page.js"></script> -->
-    <!-- <script src="aparitie_treptata_titlu.js"></script> -->
-    <!-- <script>
-        window.onload = () => {
-            const form = document.querySelector('form');
-            form.setAttribute('method', 'post');
-        };
-      </script> -->
     <title>Generator Diete</title>
 </head>
 <body>
@@ -35,14 +28,14 @@
                 <span class="dropdown">
                 <a href="macros.html" class='dropbtn'>Tabel Produse</a>
                         <div class="dropdown-content">
-                            <a href="#surse_proteine">Surse de proteine</a>
-                            <a href="#surse_carbohidrati">Surse de carbohidrati</a>
-                            <a href="#surse_lipide">Surse de lipide</a>
+                            <a href="macros.html#surse_proteine">Surse de proteine</a>
+                            <a href="macros.html#surse_carbohidrati">Surse de carbohidrati</a>
+                            <a href="macros.html#surse_lipide">Surse de lipide</a>
                         </div>    
                 </span>
                 <a href="generator_diete.html">Generator Dieta</a>
                 <a href="bibliografie.html">Cheatsheet</a>
-                <a href="despre_proiect.html">Despre Proiect</a>
+                <!-- <a href="despre_proiect.html">Despre Proiect</a> -->
             </div>
         </div>
     </nav>
@@ -61,7 +54,7 @@
                 <input type="text" placeholder="Preferinta de mancare" name="preferinta" id="input1" required/>
                 <br>
                 <label>Kcal_totale: </label>
-                <input type="number" placeholder="Kcal_total" min=1600 max=3000 name="kcal_total" id = "input2" required/>
+                <input type="text" placeholder="Kcal_total" name="kcal_total" id = "input2" required/>
                 <input type="submit"/>
             </form>
             </div>
