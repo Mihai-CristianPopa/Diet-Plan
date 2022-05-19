@@ -1,13 +1,25 @@
 // import topnav_active_page from "./topnav_active_page";
 function init(){
 
-    const form = document.querySelector('#aplicatiaInitiala');
-    form.addEventListener('submit', handleSubmit);
+    document.addEventListener('keypress',(e)=>{
+        if(e.code==='KeyF'){
+        const form = document.querySelector('#aplicatiaInitiala');
+        form.addEventListener('submit', handleSubmit);
+        }
+        else {
+            return;
+        }
+    })
+
+
+    // const form = document.querySelector('#aplicatiaInitiala');
+    // form.addEventListener('submit', handleSubmit);
 
     // document.addEventListener('keydown', handleKeyDown);
     // ajax();       
     topnav_active_page();
-    // cautarePreferinta();             
+    // cautarePreferinta();
+                 
 
 }
 
