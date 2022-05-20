@@ -7,6 +7,10 @@ function init(){
         form.addEventListener('submit', handleSubmit);
         }
         else {
+            const form = document.querySelector('#aplicatiaInitiala');
+            form.addEventListener('submit', (e)=>{
+                e.preventDefault();
+            });
             return;
         }
     })
