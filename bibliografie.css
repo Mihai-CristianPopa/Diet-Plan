@@ -211,6 +211,7 @@ header{
     font-size: 00.7em;
     text-align: center;
     background-color: rgb(30, 30, 125);
+    height: 5vh;
 }
 
 @keyframes rotation{
